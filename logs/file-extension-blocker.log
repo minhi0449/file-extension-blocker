@@ -1,0 +1,344 @@
+2025-08-24T21:33:09.203+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] c.file.FileExtensionBlockerApplication   : Starting FileExtensionBlockerApplication using Java 17.0.12 with PID 42547 (/Users/kimminimanimu/Desktop/workspace/file-extension-blocker/build/classes/java/main started by kimminimanimu in /Users/kimminimanimu/Desktop/workspace/file-extension-blocker)
+2025-08-24T21:33:09.204+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] c.file.FileExtensionBlockerApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-08-24T21:33:09.222+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-24T21:33:09.222+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-24T21:33:09.606+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-24T21:33:09.644+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+2025-08-24T21:33:09.898+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-24T21:33:09.906+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-24T21:33:09.906+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-08-24T21:33:09.924+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-24T21:33:09.924+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 701 ms
+2025-08-24T21:33:10.010+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-24T21:33:10.043+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-08-24T21:33:10.062+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-24T21:33:10.248+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-24T21:33:10.273+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-24T21:33:11.423+09:00  WARN 42547 --- [file-extension-blocker] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1049, SQLState: 42000
+2025-08-24T21:33:11.423+09:00 ERROR 42547 --- [file-extension-blocker] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unknown database 'file_ext_blocker'
+2025-08-24T21:33:11.424+09:00  WARN 42547 --- [file-extension-blocker] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.SQLGrammarException: unable to obtain isolated JDBC connection [Unknown database 'file_ext_blocker'] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:91) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.file.FileExtensionBlockerApplication.main(FileExtensionBlockerApplication.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.5.jar:3.5.5]
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'file_ext_blocker'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 40 common frames omitted
+
+2025-08-24T21:33:11.437+09:00  WARN 42547 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-24T21:33:11.443+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-24T21:33:11.898+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-24T21:33:11.909+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-24T21:33:12.970+09:00  WARN 42547 --- [file-extension-blocker] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1049, SQLState: 42000
+2025-08-24T21:33:12.971+09:00 ERROR 42547 --- [file-extension-blocker] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unknown database 'file_ext_blocker'
+2025-08-24T21:33:12.981+09:00 ERROR 42547 --- [file-extension-blocker] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Unknown database 'file_ext_blocker'] [n/a]
+2025-08-24T21:33:12.982+09:00  WARN 42547 --- [file-extension-blocker] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Unknown database 'file_ext_blocker'] [n/a]
+2025-08-24T21:33:12.986+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-08-24T21:33:12.998+09:00  INFO 42547 --- [file-extension-blocker] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-08-24T21:33:13.014+09:00 ERROR 42547 --- [file-extension-blocker] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Unknown database 'file_ext_blocker'] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.file.FileExtensionBlockerApplication.main(FileExtensionBlockerApplication.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.5.jar:3.5.5]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Unknown database 'file_ext_blocker'] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 20 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Unknown database 'file_ext_blocker'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:65) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:233) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
+	... 24 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'file_ext_blocker'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
+	... 45 common frames omitted
+
+2025-08-24T21:37:12.005+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] c.file.FileExtensionBlockerApplication   : Starting FileExtensionBlockerApplication using Java 17.0.12 with PID 44014 (/Users/kimminimanimu/Desktop/workspace/file-extension-blocker/build/classes/java/main started by kimminimanimu in /Users/kimminimanimu/Desktop/workspace/file-extension-blocker)
+2025-08-24T21:37:12.007+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] c.file.FileExtensionBlockerApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-08-24T21:37:12.025+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-24T21:37:12.026+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-24T21:37:12.332+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-24T21:37:12.358+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-08-24T21:37:12.586+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-24T21:37:12.593+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-24T21:37:12.593+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-08-24T21:37:12.610+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-24T21:37:12.610+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 584 ms
+2025-08-24T21:37:12.690+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-24T21:37:12.720+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-08-24T21:37:12.737+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-24T21:37:12.884+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-24T21:37:12.898+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-24T21:37:13.145+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4efb0064
+2025-08-24T21:37:13.147+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-24T21:37:13.223+09:00  WARN 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-24T21:37:13.236+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-24T21:37:13.645+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-24T21:37:13.726+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    create table custom_extensions (
+        id bigint not null auto_increment,
+        created_at datetime(6) not null,
+        extension varchar(20) not null,
+        updated_at datetime(6) not null,
+        primary key (id)
+    ) engine=InnoDB
+2025-08-24T21:37:13.792+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    create table fixed_extensions (
+        id bigint not null auto_increment,
+        blocked bit not null,
+        created_at datetime(6) not null,
+        extension varchar(20) not null,
+        updated_at datetime(6) not null,
+        primary key (id)
+    ) engine=InnoDB
+2025-08-24T21:37:13.849+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    create table upload_history (
+        id bigint not null auto_increment,
+        allowed bit not null,
+        extension varchar(20),
+        filename varchar(255) not null,
+        upload_time datetime(6) not null,
+        primary key (id)
+    ) engine=InnoDB
+2025-08-24T21:37:13.902+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    alter table custom_extensions 
+       drop index UKlljb4pgbjdvm46o4gmxmhbgcf
+2025-08-24T21:37:13.973+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    alter table custom_extensions 
+       add constraint UKlljb4pgbjdvm46o4gmxmhbgcf unique (extension)
+2025-08-24T21:37:14.038+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    alter table fixed_extensions 
+       drop index UKlnq0fhbbbgw5m88efmjd6k2de
+2025-08-24T21:37:14.074+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    alter table fixed_extensions 
+       add constraint UKlnq0fhbbbgw5m88efmjd6k2de unique (extension)
+2025-08-24T21:37:14.144+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-24T21:37:14.300+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] com.file.service.FixedExtensionService   : 고정 확장자 초기화 시작. 설정된 확장자 수: 7
+2025-08-24T21:37:14.402+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0
+2025-08-24T21:37:14.537+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        fixed_extensions
+        (blocked, created_at, extension, updated_at) 
+    values
+        (?, ?, ?, ?)
+2025-08-24T21:37:14.539+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:37:14.539+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.487784]
+2025-08-24T21:37:14.539+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [bat]
+2025-08-24T21:37:14.539+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:37:14.487803]
+2025-08-24T21:37:14.634+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        fixed_extensions
+        (blocked, created_at, extension, updated_at) 
+    values
+        (?, ?, ?, ?)
+2025-08-24T21:37:14.635+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:37:14.635+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.613926]
+2025-08-24T21:37:14.635+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [cmd]
+2025-08-24T21:37:14.635+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:37:14.613942]
+2025-08-24T21:37:14.713+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        fixed_extensions
+        (blocked, created_at, extension, updated_at) 
+    values
+        (?, ?, ?, ?)
+2025-08-24T21:37:14.714+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:37:14.714+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.698433]
+2025-08-24T21:37:14.714+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [com]
+2025-08-24T21:37:14.714+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:37:14.698463]
+2025-08-24T21:37:14.779+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        fixed_extensions
+        (blocked, created_at, extension, updated_at) 
+    values
+        (?, ?, ?, ?)
+2025-08-24T21:37:14.780+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:37:14.781+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.761846]
+2025-08-24T21:37:14.781+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [cpl]
+2025-08-24T21:37:14.781+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:37:14.761869]
+2025-08-24T21:37:14.858+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        fixed_extensions
+        (blocked, created_at, extension, updated_at) 
+    values
+        (?, ?, ?, ?)
+2025-08-24T21:37:14.859+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:37:14.859+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.844125]
+2025-08-24T21:37:14.859+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [exe]
+2025-08-24T21:37:14.859+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:37:14.844145]
+2025-08-24T21:37:14.927+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        fixed_extensions
+        (blocked, created_at, extension, updated_at) 
+    values
+        (?, ?, ?, ?)
+2025-08-24T21:37:14.928+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:37:14.928+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.912845]
+2025-08-24T21:37:14.928+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [scr]
+2025-08-24T21:37:14.928+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:37:14.912858]
+2025-08-24T21:37:15.015+09:00 DEBUG 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.SQL                        : 
+    insert 
+    into
+        fixed_extensions
+        (blocked, created_at, extension, updated_at) 
+    values
+        (?, ?, ?, ?)
+2025-08-24T21:37:15.016+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:37:15.016+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.992056]
+2025-08-24T21:37:15.016+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [js]
+2025-08-24T21:37:15.016+09:00 TRACE 44014 --- [file-extension-blocker] [restartedMain] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:37:14.992089]
+2025-08-24T21:37:15.074+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] com.file.service.FixedExtensionService   : 고정 확장자 초기화 완료. 새로 생성된 확장자: 7개
+2025-08-24T21:37:15.126+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-24T21:37:15.377+09:00  WARN 44014 --- [file-extension-blocker] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-24T21:37:15.388+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-08-24T21:37:15.511+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://13.209.67.184:3306/file_ext_blocker?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true'
+2025-08-24T21:37:15.538+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-24T21:37:15.563+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-24T21:37:15.570+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] c.file.FileExtensionBlockerApplication   : Started FileExtensionBlockerApplication in 3.812 seconds (process running for 9.132)
