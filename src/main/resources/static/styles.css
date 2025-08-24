@@ -1,0 +1,397 @@
+@charset "utf-8";
+
+/* 디자인 토큰 */
+:root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text-1: #1f2937;
+    --text-2: #6b7280;
+    --line: #e5e7eb;
+    --primary: #5a33f6;
+    --primary-ink: #ffffff;
+    --muted: #f3f4f6;
+    --chip-bg: #f8fafc;
+    --chip-border: #e2e8f0;
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    --radius: 16px;
+}
+
+/* reset */
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box
+}
+
+body {
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+    color: #121212;
+    text-decoration: none;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+.cf {}
+
+.cf:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Apple SD Gothic Neo, Malgun Gothic, sans-serif;
+    color: var(--text-1);
+    background: var(--bg);
+}
+
+/* 레이아웃 */
+.page {
+    max-width: 1100px;
+    margin: 32px auto 64px;
+    padding: 0 20px;
+}
+
+.page__header {
+    margin-bottom: 20px
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.title-emoji {
+    font-size: 28px
+}
+
+.page-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.page-desc {
+    margin: 8px 0 0;
+    color: var(--text-2)
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px 22px;
+    margin-top: 16px;
+}
+
+.card__title {
+    margin: 0 0 12px;
+    font-size: 18px
+}
+
+/* 요건 3열 안내 */
+.req-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.req-item {
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 12px;
+    background: #fcfdff;
+}
+
+.req-item h3 {
+    margin: 0 0 6px;
+    font-size: 15px
+}
+
+.req-item ul {
+    margin: 0;
+    padding-left: 18px
+}
+
+.req-item li {
+    color: var(--text-2)
+}
+
+/* ===== 폼 테이블 ===== */
+.form-table {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+}
+
+.form-table__label {
+    padding: 16px 14px;
+    background: #f9fafb;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-weight: 700;
+}
+
+.form-table__field {
+    padding: 16px 14px;
+    border-bottom: 1px solid var(--line);
+}
+
+.hint {
+    margin: 8px 0 0;
+    color: var(--text-2);
+    font-size: 13px
+}
+
+/* 고정 확장자 칩형 체크박스 */
+.ext-fixed {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.check-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--chip-bg);
+    cursor: pointer;
+    user-select: none;
+}
+
+.check-chip input {
+    accent-color: var(--primary)
+}
+
+.check-chip span {
+    font-size: 14px
+}
+
+/* 입력 행 */
+.custom-input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input {
+    flex: 1;
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    outline: none;
+}
+
+.input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* 칩 영역 */
+.chip-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+.chip-counter {
+    font-size: 13px;
+    color: var(--text-2)
+}
+
+.chip-area {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    border: 1px dashed var(--chip-border);
+    border-radius: 12px;
+    padding: 12px;
+    background: #fbfcff;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border: 1px solid var(--chip-border);
+    background: var(--chip-bg);
+    border-radius: 999px;
+}
+
+.chip__text {
+    font-size: 14px
+}
+
+.chip__close {
+    border: 0;
+    background: #e5e7eb;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.chip__close:hover {
+    background: #d1d5db
+}
+
+/* 버튼 */
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 16px
+}
+
+.btn {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--primary-ink);
+}
+
+.btn-primary:hover {
+    filter: brightness(0.96)
+}
+
+.btn-secondary {
+    background: var(--muted);
+    border-color: var(--line);
+}
+
+.btn-ghost {
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+/* 푸터 */
+.page__footer {
+    margin-top: 22px;
+    color: var(--text-2);
+    font-size: 13px;
+    text-align: left;
+}
+
+/* 반응형 */
+@media (max-width: 860px) {
+    .req-grid {
+        grid-template-columns: 1fr
+    }
+
+    .form-table {
+        grid-template-columns: 1fr
+    }
+
+    .form-table__label {
+        border-right: 0
+    }
+}
+
+/* 모달 */
+.modal {
+    display: none
+}
+
+.modal.is-open {
+    display: block
+}
+
+.modal__desc {
+    color: var(--text-2);
+    margin: 6px 0 14px
+}
+
+/* 버튼 */
+.modal__actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 12px;
+}
+
+/* 배경 */
+.modal__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, .48);
+    backdrop-filter: blur(2px) saturate(120%);
+    z-index: 1000;
+}
+
+/* 가운데 박스 */
+.modal__dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 진짜 중앙 */
+    width: clamp(320px, 90vw, 440px);
+    /* 화면에 맞게 자동 */
+    max-height: 75vh;
+    /* 너무 길면 내부 스크롤 */
+    overflow: auto;
+
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+    padding: 20px;
+    z-index: 1001;
+
+    opacity: 0;
+}
+
+.modal.is-open .modal__dialog {
+    animation: modal-pop .18s ease-out forwards;
+}
+
+@keyframes modal-pop {
+    to {
+        opacity: 1;
+    }
+}

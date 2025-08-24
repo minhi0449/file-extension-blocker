@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>파일 확장자 차단</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+<main class="page">
+    <!-- 헤더 -->
+    <header class="page__header">
+        <div class="title-row">
+            <!-- <span class="title-emoji" aria-hidden="true">📂</span> -->
+            <h1 class="page-title">파일 확장자 차단</h1>
+        </div>
+        <p class="page-desc">
+            어떤 파일들은 첨부 시 보안에 문제가 될 수 있습니다. 특히 <code>exe</code>, <code>sh</code> 등의 실행 파일은
+            서버 업로드 후 실행 위험이 있어 확장자 차단 기능을 제공합니다.
+        </p>
+    </header>
+
+    <!-- 설정 카드 -->
+    <section class="card">
+        <h2 class="card__title">설정</h2>
+
+        <div class="form-table">
+            <!-- 고정 확장자 -->
+            <div class="form-table__label">고정 확장자</div>
+            <div class="form-table__field">
+                <div class="ext-fixed">
+                    <!-- [JS연결지점] 체크 변경 시 서버 저장(AJAX) -->
+                    <label class="check-chip">
+                        <input type="checkbox" name="fixedExt" value="bat" />
+                        <span>bat</span>
+                    </label>
+                    <label class="check-chip">
+                        <input type="checkbox" name="fixedExt" value="cmd" />
+                        <span>cmd</span>
+                    </label>
+                    <label class="check-chip">
+                        <input type="checkbox" name="fixedExt" value="com" />
+                        <span>com</span>
+                    </label>
+                    <label class="check-chip">
+                        <input type="checkbox" name="fixedExt" value="cpl" />
+                        <span>cpl</span>
+                    </label>
+                    <label class="check-chip">
+                        <input type="checkbox" name="fixedExt" value="exe" />
+                        <span>exe</span>
+                    </label>
+                    <label class="check-chip">
+                        <input type="checkbox" name="fixedExt" value="scr" />
+                        <span>scr</span>
+                    </label>
+                    <label class="check-chip">
+                        <input type="checkbox" name="fixedExt" value="js" />
+                        <span>js</span>
+                    </label>
+                </div>
+                <p class="hint">* 자주 차단되는 실행형 확장자 위주로 구성되었습니다.</p>
+            </div>
+
+            <!-- 커스텀 확장자 입력 -->
+            <div class="form-table__label">커스텀 확장자</div>
+            <div class="form-table__field">
+                <div class="custom-input-row">
+                    <!-- [JS연결지점] maxlength=20 검증 + 중복확인 + 서버 저장 -->
+                    <input type="text" class="input" name="customExt" placeholder="확장자 입력 (예: php, jar)"
+                           maxlength="20" aria-describedby="extHelp" />
+                    <button type="button" class="btn btn-secondary">+추가</button>
+                </div>
+                <p id="extHelp" class="hint">* 최대 20자, 영문/숫자/점(.)/하이픈(-) 등 형식 검증 권장</p>
+
+                <!-- 칩 영역 -->
+                <div class="chip-header">
+                    <span class="chip-counter"><strong>3</strong>/200</span>
+                </div>
+
+                <!-- [JS연결지점] 서버에서 불러온 커스텀 확장자 렌더링 -->
+                <div class="chip-area" role="list" aria-label="추가된 확장자 목록">
+                    <div class="chip" role="listitem">
+                        <span class="chip__text">sh</span>
+                        <button type="button" class="chip__close" aria-label="sh 삭제">×</button>
+                    </div>
+                    <div class="chip" role="listitem">
+                        <span class="chip__text">ju</span>
+                        <button type="button" class="chip__close" aria-label="ju 삭제">×</button>
+                    </div>
+                    <div class="chip" role="listitem">
+                        <span class="chip__text">ch</span>
+                        <button type="button" class="chip__close" aria-label="ch 삭제">×</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 액션 버튼 -->
+        <div class="actions">
+            <!-- [JS연결지점] 서버 저장(일괄 저장을 선택할 경우) -->
+            <button type="button" class="btn">
+                <a href="./upload-test.html">업로드 테스트</a>
+            </button>
+            <button type="button" class="btn btn-primary">저장</button>
+            <button type="button" class="btn btn-ghost">취소</button>
+        </div>
+    </section>
+
+    <footer class="page__footer">
+        copyright ©2025 Developer_KIMMINHEE
+    </footer>
+
+    <!-- 저장 완료 모달(초기엔 숨김, 서버/JS에서 .is-open 토글) -->
+    <div class="modal" id="saveModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal__backdrop"></div>
+        <div class="modal__dialog">
+            <h3 id="modalTitle">설정이 저장되었습니다</h3>
+            <p class="modal__desc">정책이 적용되었어요.</p>
+            <div class="modal__actions">
+                <a href="./admin-ext-policy.html" class="btn btn-primary" type="button">확인</a>
+                <a href="./test-upload.html" class="btn btn-ghost">업로드 테스트</a>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/main.js"></script>
+</main>
+</body>
+
+</html>`
