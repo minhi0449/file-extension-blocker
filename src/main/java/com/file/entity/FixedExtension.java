@@ -17,7 +17,8 @@ public class FixedExtension {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "extension", unique = true, nullable = false, length = 10)
+    // 최대 20자
+    @Column(name = "extension", unique = true, nullable = false, length = 20)
     private String extension;
 
     @Column(name = "blocked", nullable = false)
@@ -43,5 +44,17 @@ public class FixedExtension {
         this.updatedAt = LocalDateTime.now();
     }
 
+    // 서비스에서 시간을 설정하지 않아도 자동 세팅
+    @PrePersist
+    protected void onCreate() {
+        if (this.createdAt == null) this.createdAt = LocalDateTime.now();
+        if (this.updatedAt == null) this.updatedAt = LocalDateTime.now();
+    }
+
+    // 업데이트 시각 자동 갱신
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 
 }
