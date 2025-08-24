@@ -6,22 +6,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "fixed_extensions")
-public class FixedExtension {
-
+@Table(name = "custom_extensions")
+public class CustomExtension {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "extension", unique = true, nullable = false, length = 10)
+    @Column(name = "extension", unique = true, nullable = false, length = 20)
     private String extension;
-
-    @Column(name = "blocked", nullable = false)
-    private boolean blocked = false; // 기본값: 허용(체크 안됨)
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -29,19 +25,11 @@ public class FixedExtension {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
-    // 비즈니스 로직: 차단 상태 변경 시 수정 시간 자동 갱신
-    public void updateBlockedStatus(boolean blocked) {
-        this.blocked = blocked;
-        this.updatedAt = LocalDateTime.now();
-    }
-
     // 생성 시 시간 자동 설정을 위한 편의 생성자
-    public FixedExtension(String extension, boolean blocked) {
+    public CustomExtension(String extension) {
         this.extension = extension;
-        this.blocked = blocked;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
-
 
 }
