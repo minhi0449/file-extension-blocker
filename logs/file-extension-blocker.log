@@ -342,3 +342,355 @@ Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'file_ext_blocker'
 2025-08-24T21:37:15.538+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2025-08-24T21:37:15.563+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
 2025-08-24T21:37:15.570+09:00  INFO 44014 --- [file-extension-blocker] [restartedMain] c.file.FileExtensionBlockerApplication   : Started FileExtensionBlockerApplication in 3.812 seconds (process running for 9.132)
+2025-08-24T21:38:28.402+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24T21:38:28.403+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-24T21:38:28.414+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2025-08-24T21:38:29.352+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    order by
+        fe1_0.extension
+2025-08-24T21:38:29.509+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.created_at,
+        ce1_0.extension,
+        ce1_0.updated_at 
+    from
+        custom_extensions ce1_0 
+    order by
+        ce1_0.created_at desc
+2025-08-24T21:38:30.189+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    where
+        fe1_0.extension=?
+2025-08-24T21:38:30.190+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [bat]
+2025-08-24T21:38:30.215+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] com.file.service.FixedExtensionService   : 고정 확장자 상태 변경: bat -> 차단
+2025-08-24T21:38:30.220+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.SQL                        : 
+    update
+        fixed_extensions 
+    set
+        blocked=?,
+        created_at=?,
+        extension=?,
+        updated_at=? 
+    where
+        id=?
+2025-08-24T21:38:30.220+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2025-08-24T21:38:30.220+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.487784]
+2025-08-24T21:38:30.220+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [bat]
+2025-08-24T21:38:30.220+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:38:30.216164]
+2025-08-24T21:38:30.221+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [1]
+2025-08-24T21:38:31.426+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    order by
+        fe1_0.extension
+2025-08-24T21:38:31.522+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.created_at,
+        ce1_0.extension,
+        ce1_0.updated_at 
+    from
+        custom_extensions ce1_0 
+    order by
+        ce1_0.created_at desc
+2025-08-24T21:38:36.493+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ce1_0.id 
+    from
+        custom_extensions ce1_0 
+    where
+        ce1_0.extension=? 
+    limit
+        ?
+2025-08-24T21:38:36.494+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [java]
+2025-08-24T21:38:36.494+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2025-08-24T21:38:36.743+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        custom_extensions ce1_0
+2025-08-24T21:38:36.758+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.SQL                        : 
+    insert 
+    into
+        custom_extensions
+        (created_at, extension, updated_at) 
+    values
+        (?, ?, ?)
+2025-08-24T21:38:36.758+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2025-08-24T21:38:36.757693]
+2025-08-24T21:38:36.758+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [java]
+2025-08-24T21:38:36.758+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:TIMESTAMP) <- [2025-08-24T21:38:36.757706]
+2025-08-24T21:38:36.860+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] c.file.service.CustomExtensionService    : 새로운 커스텀 확장자 추가: java
+2025-08-24T21:38:38.754+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    order by
+        fe1_0.extension
+2025-08-24T21:38:38.855+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.created_at,
+        ce1_0.extension,
+        ce1_0.updated_at 
+    from
+        custom_extensions ce1_0 
+    order by
+        ce1_0.created_at desc
+2025-08-24T21:38:41.617+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        uh1_0.id,
+        uh1_0.allowed,
+        uh1_0.extension,
+        uh1_0.filename,
+        uh1_0.upload_time 
+    from
+        upload_history uh1_0 
+    order by
+        uh1_0.upload_time desc 
+    limit
+        ?
+2025-08-24T21:38:41.618+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:INTEGER) <- [10]
+2025-08-24T21:38:47.513+09:00  WARN 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.apache.catalina.connector.Request    : Creating the temporary upload location [/private/var/folders/6v/lnghgnrj2h31hzfw22m7bffw0000gn/T/tomcat.8080.14396967579393221906/work/Tomcat/localhost/ROOT/uploads] as it is required by the servlet [dispatcherServlet]
+2025-08-24T21:38:47.528+09:00  WARN 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'title' for method parameter type String is not present]
+2025-08-24T21:38:49.663+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        uh1_0.id,
+        uh1_0.allowed,
+        uh1_0.extension,
+        uh1_0.filename,
+        uh1_0.upload_time 
+    from
+        upload_history uh1_0 
+    order by
+        uh1_0.upload_time desc 
+    limit
+        ?
+2025-08-24T21:38:49.664+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:INTEGER) <- [10]
+2025-08-24T21:38:59.886+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    where
+        fe1_0.extension=?
+2025-08-24T21:38:59.887+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [com]
+2025-08-24T21:38:59.923+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] com.file.service.FixedExtensionService   : 고정 확장자 상태 변경: com -> 차단
+2025-08-24T21:38:59.924+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.SQL                        : 
+    update
+        fixed_extensions 
+    set
+        blocked=?,
+        created_at=?,
+        extension=?,
+        updated_at=? 
+    where
+        id=?
+2025-08-24T21:38:59.925+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [true]
+2025-08-24T21:38:59.925+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.698433]
+2025-08-24T21:38:59.925+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [com]
+2025-08-24T21:38:59.925+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:38:59.924484]
+2025-08-24T21:38:59.925+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [3]
+2025-08-24T21:39:01.122+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    order by
+        fe1_0.extension
+2025-08-24T21:39:01.267+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.created_at,
+        ce1_0.extension,
+        ce1_0.updated_at 
+    from
+        custom_extensions ce1_0 
+    order by
+        ce1_0.created_at desc
+2025-08-24T21:39:02.064+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    where
+        fe1_0.extension=?
+2025-08-24T21:39:02.066+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [com]
+2025-08-24T21:39:02.097+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] com.file.service.FixedExtensionService   : 고정 확장자 상태 변경: com -> 허용
+2025-08-24T21:39:02.099+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.SQL                        : 
+    update
+        fixed_extensions 
+    set
+        blocked=?,
+        created_at=?,
+        extension=?,
+        updated_at=? 
+    where
+        id=?
+2025-08-24T21:39:02.099+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:39:02.099+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.698433]
+2025-08-24T21:39:02.100+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [com]
+2025-08-24T21:39:02.100+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:39:02.098718]
+2025-08-24T21:39:02.100+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [3]
+2025-08-24T21:39:02.567+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    where
+        fe1_0.extension=?
+2025-08-24T21:39:02.568+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [bat]
+2025-08-24T21:39:02.582+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] com.file.service.FixedExtensionService   : 고정 확장자 상태 변경: bat -> 허용
+2025-08-24T21:39:02.583+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.SQL                        : 
+    update
+        fixed_extensions 
+    set
+        blocked=?,
+        created_at=?,
+        extension=?,
+        updated_at=? 
+    where
+        id=?
+2025-08-24T21:39:02.583+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BOOLEAN) <- [false]
+2025-08-24T21:39:02.583+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2025-08-24T21:37:14.487784]
+2025-08-24T21:39:02.583+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [bat]
+2025-08-24T21:39:02.583+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (4:TIMESTAMP) <- [2025-08-24T21:39:02.583078]
+2025-08-24T21:39:02.584+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [1]
+2025-08-24T21:39:03.590+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    order by
+        fe1_0.extension
+2025-08-24T21:39:03.750+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.created_at,
+        ce1_0.extension,
+        ce1_0.updated_at 
+    from
+        custom_extensions ce1_0 
+    order by
+        ce1_0.created_at desc
+2025-08-24T21:39:08.630+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ce1_0.id 
+    from
+        custom_extensions ce1_0 
+    where
+        ce1_0.extension=? 
+    limit
+        ?
+2025-08-24T21:39:08.632+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [jar]
+2025-08-24T21:39:08.632+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2025-08-24T21:39:08.663+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        custom_extensions ce1_0
+2025-08-24T21:39:08.691+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        custom_extensions
+        (created_at, extension, updated_at) 
+    values
+        (?, ?, ?)
+2025-08-24T21:39:08.692+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2025-08-24T21:39:08.689976]
+2025-08-24T21:39:08.693+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [jar]
+2025-08-24T21:39:08.693+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (3:TIMESTAMP) <- [2025-08-24T21:39:08.689997]
+2025-08-24T21:39:08.717+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-3] c.file.service.CustomExtensionService    : 새로운 커스텀 확장자 추가: jar
+2025-08-24T21:39:12.791+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ce1_0.id 
+    from
+        custom_extensions ce1_0 
+    where
+        ce1_0.extension=? 
+    limit
+        ?
+2025-08-24T21:39:12.792+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [php]
+2025-08-24T21:39:12.792+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2025-08-24T21:39:12.808+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        custom_extensions ce1_0
+2025-08-24T21:39:12.826+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        custom_extensions
+        (created_at, extension, updated_at) 
+    values
+        (?, ?, ?)
+2025-08-24T21:39:12.827+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2025-08-24T21:39:12.824968]
+2025-08-24T21:39:12.827+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [php]
+2025-08-24T21:39:12.827+09:00 TRACE 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (3:TIMESTAMP) <- [2025-08-24T21:39:12.824987]
+2025-08-24T21:39:12.843+09:00  INFO 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-5] c.file.service.CustomExtensionService    : 새로운 커스텀 확장자 추가: php
+2025-08-24T21:39:14.527+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        fe1_0.id,
+        fe1_0.blocked,
+        fe1_0.created_at,
+        fe1_0.extension,
+        fe1_0.updated_at 
+    from
+        fixed_extensions fe1_0 
+    order by
+        fe1_0.extension
+2025-08-24T21:39:14.623+09:00 DEBUG 44014 --- [file-extension-blocker] [http-nio-0.0.0.0-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.created_at,
+        ce1_0.extension,
+        ce1_0.updated_at 
+    from
+        custom_extensions ce1_0 
+    order by
+        ce1_0.created_at desc
