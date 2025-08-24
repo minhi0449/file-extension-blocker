@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="ko">
-
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>업로드 테스트</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./upload-test.css" />
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <link rel="stylesheet" th:href="@{/upload-test.css}" />
 </head>
 
 <body>
@@ -22,64 +21,34 @@
     <!-- 업로드 폼 -->
     <section class="card">
         <h2 class="card__title">파일 업로드</h2>
-        <form class="form-table" action="#" method="post" enctype="multipart/form-data">
+
+        <form id="uploadForm" class="form-table" action="#" method="post" enctype="multipart/form-data">
             <div class="form-table__label">제목</div>
             <div class="form-table__field">
                 <input type="text" class="input" placeholder="테스트 제목을 입력하세요" />
             </div>
+
             <div class="form-table__label">파일 첨부</div>
             <div class="form-table__field">
-                <input type="file" />
-                <p class="hint">금지 확장자일 경우 업로드가 차단됩니다.</p>
+                <input type="file" name="file" id="file" />
+                <p class="hint">* 금지 확장자일 경우 업로드가 차단됩니다.</p>
             </div>
+
         </form>
         <div class="actions">
             <!-- [JS연결지점] 서버 저장(일괄 저장을 선택할 경우) -->
-            <button type="submit" class="btn btn-primary">업로드</button>
+            <button type="submit" class="btn btn-primary" form="uploadForm">업로드</button>
             <button type="button" class="btn btn-ghost">
-                <a href="./index.html">취소</a>
+                <a th:href="@{/file-ext-blocker.html}">취소</a>
             </button>
         </div>
     </section>
-
-    <!-- 최근 업로드(간단 리스트) -->
-    <!-- <section class="card">
-        <h2 class="card__title">최근 업로드</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th style="width:48%">파일명</th>
-                    <th style="width:14%">확장자</th>
-                    <th style="width:18%">결과</th>
-                    <th style="width:20%">시간</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>setup.exe</td>
-                    <td>exe</td>
-                    <td><span class="badge block">BLOCK</span></td>
-                    <td>2025-08-24 02:10</td>
-                </tr>
-                <tr>
-                    <td>logo.png</td>
-                    <td>png</td>
-                    <td><span class="badge ok">ALLOW</span></td>
-                    <td>2025-08-24 02:12</td>
-                </tr>
-            </tbody>
-        </table>
-    </section> -->
 
     <!-- 최근 업로드 카드 -->
     <section class="card">
         <h2 class="card__title">최근 업로드</h2>
 
-        <!-- [수정] form-table(라벨/값 매트릭스) → data-table(목록 표)로 변경
-     이유: 열 머리글이 행마다 반복되는 문제 해결, 원본 스타일(가로 표)과 동일한 정보 구조 유지 -->
         <table class="data-table">
-            <!-- [수정] colgroup으로 각 열 너비 고정: 파일명 48% / 확장자 14% / 결과 18% / 시간 20%
-       이유: 원래 표 비율과 동일하게 정렬되도록 보장 -->
             <colgroup>
                 <col style="width:48%">
                 <col style="width:14%">
@@ -96,20 +65,7 @@
             </tr>
             </thead>
 
-            <tbody>
-            <tr>
-                <td>setup.exe</td>
-                <td>exe</td>
-                <td><span class="badge badge--block">차단</span></td>
-                <td>2025-08-24 02:10</td>
-            </tr>
-            <tr>
-                <td>logo.png</td>
-                <td>png</td>
-                <td><span class="badge badge--allow">허용</span></td>
-                <td>2025-08-24 02:12</td>
-            </tr>
-            </tbody>
+            <tbody id="recentTbody"></tbody>
         </table>
     </section>
 
@@ -122,13 +78,14 @@
             <h3 id="rTitle">업로드 결과</h3>
             <p class="modal__desc">정책에 의해 차단되었습니다.</p>
             <div class="modal__actions">
-                <a href="./test-upload.html" class="btn btn-primary">확인</a>
-                <a href="./admin-ext-policy.html" class="btn btn-ghost">정책 설정으로</a>
+<!--                <a th:href="@{/upload-test}" class="btn btn-primary">확인</a>-->
+                <button type="button" class="btn btn-primary" id="modalOk">확인</button>
+                <a th:href="@{/block}" class="btn btn-ghost">정책 설정으로</a>
             </div>
         </div>
     </div>
 </main>
-<script src="./js/main.js"></script>
+<script th:src="@{/main.js}"></script>
 </body>
 
 </html>

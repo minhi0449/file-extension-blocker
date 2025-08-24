@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class FixedExtensionService {
 
     private final FixedExtensionRepository fixedExtensionRepository;
-    private ExtensionPolicyConfig policyConfig;
+    private final ExtensionPolicyConfig extensionPolicyConfig;
 
     /**
      * 애플리케이션 시작 시 고정 확장자 초기화
@@ -40,9 +40,9 @@ public class FixedExtensionService {
     @PostConstruct
     public void initializeFixedExtensions() {
         try {
-            log.info("고정 확장자 초기화 시작. 설정된 확장자 수: {}", policyConfig.getFixedExtensions().size());
+            log.info("고정 확장자 초기화 시작. 설정된 확장자 수: {}", extensionPolicyConfig.getFixedExtensions().size());
 
-            List<String> configuredExtensions = policyConfig.getFixedExtensions();
+            List<String> configuredExtensions = extensionPolicyConfig.getFixedExtensions();
             if (configuredExtensions == null || configuredExtensions.isEmpty()) {
                 log.warn("설정 파일에 고정 확장자가 정의되지 않았습니다. 기본값을 사용합니다.");
                 return;
@@ -104,7 +104,7 @@ public class FixedExtensionService {
             String normalizedExt = normalizeExtension(extension);
 
             // 설정 파일에 정의된 유효한 고정 확장자인지 확인
-            List<String> configuredExtensions = policyConfig.getFixedExtensions();
+            List<String> configuredExtensions = extensionPolicyConfig.getFixedExtensions();
             boolean isValidFixedExtension = configuredExtensions.stream()
                     .anyMatch(configExt -> normalizeExtension(configExt).equals(normalizedExt));
 
@@ -182,7 +182,7 @@ public class FixedExtensionService {
      */
     @Transactional(readOnly = true)
     public List<String> getConfiguredFixedExtensions() {
-        return policyConfig.getFixedExtensions().stream()
+        return extensionPolicyConfig.getFixedExtensions().stream()
                 .map(this::normalizeExtension)
                 .collect(Collectors.toList());
     }

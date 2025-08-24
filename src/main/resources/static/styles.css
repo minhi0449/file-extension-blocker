@@ -295,7 +295,7 @@ body {
 }
 
 .btn-primary:hover {
-    filter: brightness(0.96)
+    filter: brightness(0.85)
 }
 
 .btn-secondary {
@@ -303,9 +303,35 @@ body {
     border-color: var(--line);
 }
 
+.btn-secondary:hover {
+    background: var(--muted);
+    border-color: var(--line);
+    filter: brightness(0.96)
+}
+
 .btn-ghost {
     background: #fff;
     border: 1px solid var(--line);
+}
+
+.btn-ghost:hover{
+    background: #f8fafc;
+    border: 1px solid var(--line);
+}
+
+.btn-upload {
+    line-height: 40px;
+    font-size: 14px;
+    background: var(--muted);
+    border: 1px solid var(--muted);
+}
+
+.btn-upload:hover {
+    line-height: 40px;
+    font-size: 14px;
+    background: var(--muted);
+    border: 1px solid var(--muted);
+    filter: brightness(0.96);
 }
 
 /* 푸터 */

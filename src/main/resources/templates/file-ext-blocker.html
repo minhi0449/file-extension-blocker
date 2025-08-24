@@ -1,11 +1,10 @@
-<!doctype html>
-<html lang="ko">
-
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>파일 확장자 차단</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" th:href="@{/styles.css}" />
 </head>
 
 <body>
@@ -69,41 +68,30 @@
             <div class="form-table__field">
                 <div class="custom-input-row">
                     <!-- [JS연결지점] maxlength=20 검증 + 중복확인 + 서버 저장 -->
-                    <input type="text" class="input" name="customExt" placeholder="확장자 입력 (예: php, jar)"
+                    <input type="text" class="input" name="customExt" id="customExtInput"
+                           placeholder="확장자 입력 (예: php, jar)"
                            maxlength="20" aria-describedby="extHelp" />
-                    <button type="button" class="btn btn-secondary">+추가</button>
+                    <button type="button" class="btn btn-secondary" id="btnAddCustom">+추가</button>
                 </div>
                 <p id="extHelp" class="hint">* 최대 20자, 영문/숫자/점(.)/하이픈(-) 등 형식 검증 권장</p>
 
                 <!-- 칩 영역 -->
                 <div class="chip-header">
-                    <span class="chip-counter"><strong>3</strong>/200</span>
+                    <span class="chip-counter"><strong id="chipCount">0</strong>/200</span>
                 </div>
 
                 <!-- [JS연결지점] 서버에서 불러온 커스텀 확장자 렌더링 -->
-                <div class="chip-area" role="list" aria-label="추가된 확장자 목록">
-                    <div class="chip" role="listitem">
-                        <span class="chip__text">sh</span>
-                        <button type="button" class="chip__close" aria-label="sh 삭제">×</button>
-                    </div>
-                    <div class="chip" role="listitem">
-                        <span class="chip__text">ju</span>
-                        <button type="button" class="chip__close" aria-label="ju 삭제">×</button>
-                    </div>
-                    <div class="chip" role="listitem">
-                        <span class="chip__text">ch</span>
-                        <button type="button" class="chip__close" aria-label="ch 삭제">×</button>
-                    </div>
-                </div>
+                <div class="chip-area" id="chipArea" role="list" aria-label="추가된 확장자 목록"></div>
             </div>
         </div>
 
         <!-- 액션 버튼 -->
         <div class="actions">
+            <a class="btn btn-ghost btn-upload" th:href="@{/upload-test}">업로드 테스트</a>
             <!-- [JS연결지점] 서버 저장(일괄 저장을 선택할 경우) -->
-            <button type="button" class="btn">
-                <a href="./upload-test.html">업로드 테스트</a>
-            </button>
+<!--            <button type="button" class="btn">-->
+<!--                <a th:href="@{/upload-test.html}">업로드 테스트</a>-->
+<!--            </button>-->
             <button type="button" class="btn btn-primary">저장</button>
             <button type="button" class="btn btn-ghost">취소</button>
         </div>
@@ -126,8 +114,7 @@
         </div>
     </div>
 </main>
-<script src="/main.js"></script>
-</main>
+<script th:src="@{/main.js}"></script>
 </body>
 
-</html>`
+</html>

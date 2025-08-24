@@ -20,7 +20,7 @@ public class CustomExtensionService {
 
     private final CustomExtensionRepository customExtensionRepository;
     private final FixedExtensionService fixedExtensionService;
-    private final ExtensionPolicyConfig policyConfig;
+    private final ExtensionPolicyConfig extensionPolicyConfig;
 
     // 모든 커스텀 확장자 조회 (최신순)
     @Transactional(readOnly = true)
@@ -52,9 +52,9 @@ public class CustomExtensionService {
             }
 
             // 최대 개수 확인 (설정 파일의 제한값 사용)
-            if (customExtensionRepository.count() >= policyConfig.getMaxCustomExtensions()) {
+            if (customExtensionRepository.count() >= extensionPolicyConfig.getMaxCustomExtensions()) {
                 log.debug("커스텀 확장자 최대 개수 초과. 현재: {}, 최대: {}",
-                        customExtensionRepository.count(), policyConfig.getMaxCustomExtensions());
+                        customExtensionRepository.count(), extensionPolicyConfig.getMaxCustomExtensions());
                 return false;
             }
 
@@ -113,7 +113,7 @@ public class CustomExtensionService {
     // 최대 허용 가능한 커스텀 확장자 개수 조회
     @Transactional(readOnly = true)
     public int getMaxCustomExtensionCount() {
-        return policyConfig.getMaxCustomExtensions();
+        return extensionPolicyConfig.getMaxCustomExtensions();
     }
 
     // === 내부 유틸리티 메서드들 ===
@@ -138,7 +138,7 @@ public class CustomExtensionService {
         }
 
         // 길이 제한 검사 (설정 파일에서 읽어온 값 사용)
-        if (extension.length() > policyConfig.getMaxExtensionLength()) {
+        if (extension.length() > extensionPolicyConfig.getMaxExtensionLength()) {
             return false;
         }
 

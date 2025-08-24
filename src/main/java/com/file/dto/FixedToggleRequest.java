@@ -11,4 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class FixedToggleRequest {
     private String extension; // "exe", "bat"
+    private boolean blocked;  // true = 차단, false = 허용
 }
